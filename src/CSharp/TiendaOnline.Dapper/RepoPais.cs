@@ -2,6 +2,7 @@ using System.Data;
 using TiendaOnline.Core;
 using TiendaOnline.Core.Persistencia;
 using Dapper;
+using System.ComponentModel.Design;
 
 namespace TiendaOnline.Dapper;
 
@@ -11,26 +12,29 @@ public class RepoPais : Repo, IRepoPais
 
     public void altaPais(Pais pais)
     {
-        var consulta = @"INSERT INTO Pais(idPais, nombre) VALUES(@idpais, @nombre)";
+        var Consulta = @"INSERT INTO Pais VALUES(@Nombre, @unidPais)";
         _conexion.Execute(
-            consulta,
-            new
+            Consulta, new
             {
-                idPais = 10,
-                nombre = "sisi"
+                unidPais = pais.idPais,
+                Nombre = pais.nombre
             }
         );
     }
 
-    public Pais? DetallePais(uint idpais)
+    public Pais? DetallePais(uint idPais)
     {
-        var consulta = @"SELECT * FROM Pais WHERE idPais = @unidpais";
-        return _conexion.QueryFirstOrDefault<Pais>(consulta, new { unidpais = idpais });
+        var Consulta = @"SELECT* FROM Pais Where idPais = @unidPais LIMIT 1";
+        return _conexion.QueryFirstOrDefault(Consulta, new
+        {
+            unidPais = idPais
+        });
     }
 
     public IEnumerable<Pais> ObtenerPaises()
     {
-        var consulta = "SELECT * FROM Pais";
-        return _conexion.Query<Pais>(consulta).ToList();
+        var Consulta = @"SELECT* FROM Pais";
+        return _conexion.Query<Pais>(Consulta).ToList();
     }
+    
 }
