@@ -9,7 +9,6 @@ namespace TiendaOnline.Dapper;
 public class RepoPais : Repo, IRepoPais
 {
     public RepoPais(IDbConnection conexion) : base(conexion) { }
-
     public void altaPais(Pais pais)
     {
         var Consulta = @"INSERT INTO Pais VALUES(@Nombre, @unidPais)";
@@ -21,7 +20,6 @@ public class RepoPais : Repo, IRepoPais
             }
         );
     }
-
     public Pais? DetallePais(uint idPais)
     {
         var Consulta = @"SELECT* FROM Pais Where idPais = @unidPais LIMIT 1";
@@ -30,11 +28,9 @@ public class RepoPais : Repo, IRepoPais
             unidPais = idPais
         });
     }
-
     public IEnumerable<Pais> ObtenerPaises()
     {
         var Consulta = @"SELECT* FROM Pais";
         return _conexion.Query<Pais>(Consulta).ToList();
     }
-    
 }
