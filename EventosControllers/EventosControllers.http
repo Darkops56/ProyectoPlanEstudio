@@ -1,0 +1,6 @@
+@EventosControllers_HostAddress = http://localhost:5136
+
+GET {{EventosControllers_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
