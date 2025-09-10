@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EventosControllers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a5ec62b073ee39155b0e279a9655801ef6e0401c")]
 [assembly: System.Reflection.AssemblyProductAttribute("EventosControllers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EventosControllers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -15,4 +15,9 @@ public class RegistroCompra
         this.Fecha = Fecha;
     }
     
+    //Métodos
+        public override string ToString()
+    {
+        return $"Compra #{idRegistro} - Cliente: {idCliente} - Entrada: {idEntrada} - Fecha: {Fecha}";
+    }
 }

@@ -9,4 +9,10 @@ public class TipoEvento
         this.idTipoEvento = idTipoEvento;
         this.tipoEvento = tipoEvento;
     }
+
+    //Métodos
+        public override string ToString()
+    {
+        return $"Tipo de evento: {tipoEvento}";
+    }
 }

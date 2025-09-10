@@ -23,4 +23,21 @@ public class Cliente
         this.Telefono = Telefono;
         this.Contrasena = Contrasena;
     }
+    
+    //Métodos
+    public void ActualizarContacto(string nuevoEmail, string nuevoTelefono)
+    {
+        this.Email = nuevoEmail;
+        this.Telefono = nuevoTelefono;
+    }
+
+    public bool VerificarContrasena(string contrasena)
+    {
+        return this.Contrasena == contrasena;
+    }
+
+    public override string ToString()
+    {
+        return $"Cliente: {nombreCompleto} - DNI: {DNI} - Email: {Email}";
+    }
 }

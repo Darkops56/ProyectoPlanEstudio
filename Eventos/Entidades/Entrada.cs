@@ -18,4 +18,15 @@ public class Entrada
         this.evento = evento;
         this.tarifa = tarifa;
     }
+    //Métodos
+        public void AplicarDescuento(int porcentaje)
+    {
+        if (porcentaje > 0 && porcentaje <= 100)
+            Precio -= (Precio * porcentaje) / 100;
+    }
+
+    public string MostrarDetalle()
+    {
+        return $"Entrada {idEntrada} - Evento: {evento.Nombre} - Precio: ${Precio} - Tarifa: {tarifa.Tipo}";
+    }
 }

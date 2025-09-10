@@ -20,4 +20,20 @@ public class Evento
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
     }
+
+    //Métodos
+    public bool EstaActivo()
+    {
+        return DateTime.Now >= fechaInicio && DateTime.Now <= fechaFin;
+    }
+
+    public TimeSpan Duracion()
+    {
+        return fechaFin - fechaInicio;
+    }
+
+    public override string ToString()
+    {
+        return $"Evento: {Nombre} ({tipoEvento.tipoEvento}) - {fechaInicio} a {fechaFin}";
+    }
 }
